@@ -1,0 +1,43 @@
+
+.category__container{
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    min-width: 30%;
+    height: 240px;
+    margin: 15px 15px;
+    border: 1px solid black;
+    background-position:center;
+    background-size:cover;
+    
+
+    &-body{
+        height: 90px;
+        width: 100px;
+        border: 2px solid black;
+        padding: 0 25px;
+        text-align: center;
+        opacity: 0.9;
+        
+        h2{
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        p{
+            font-weight: lighter;
+            font-size: 16px;
+        }
+    }
+    &:hover{
+        cursor:pointer;
+        opacity: 0.7;
+        transition: 2s ease;
+        .category__container-body{
+            transform: scale(1.2);
+            transition: 2s ease;
+        }
+    }
+
+}

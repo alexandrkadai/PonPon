@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import CategoriesContainer from './component/category-container/categories-container';
 
-function App() {
+import './categories.style.scss';
+
+const App = () => {
+
+  const categories =[
+    {
+      id : 1,
+      title: 'hats',
+      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
+    },
+    {
+      id : 2,
+      title: 'jackets',
+      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
+    },
+    {
+      id : 3,
+      title: 'shoes',
+      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
+    },
+    {
+      id : 4,
+      title: 'women',
+      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
+    },
+    {
+      id : 5,
+      title: 'men',
+      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    < CategoriesContainer categories={categories}/>
   );
 }
 
