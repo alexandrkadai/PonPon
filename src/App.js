@@ -1,39 +1,26 @@
-import CategoriesContainer from './component/category-container/categories-container';
+import Home from './routes/home/home.component';
+import Navigation from './routes/navigation/navigation.component';
+import {Route, Routes} from 'react-router-dom';
 
-import './categories.style.scss';
+const Shop = () =>{
+  return ( 
+    <div>
+    <h1>Shop Page</h1>  
+    </div>
+  )
+}
+
+
 
 const App = () => {
-
-  const categories =[
-    {
-      id : 1,
-      title: 'hats',
-      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
-    },
-    {
-      id : 2,
-      title: 'jackets',
-      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
-    },
-    {
-      id : 3,
-      title: 'shoes',
-      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
-    },
-    {
-      id : 4,
-      title: 'women',
-      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
-    },
-    {
-      id : 5,
-      title: 'men',
-      url: 'https://images.freeimages.com/images/large-previews/2d8/spring-1397821.jpg'
-    },
-  ];
   return (
-    < CategoriesContainer categories={categories}/>
+    <Routes>
+      <Route path='/' element={<Navigation/>}>
+        <Route index element={ <Home /> } />
+        <Route path='shop' element={ <Shop /> } />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
