@@ -7,12 +7,9 @@ import './navigation.style.scss';
 import { ReactComponent as LogoC } from '../../assets/Shoe.svg';
 
 const Navigation = () =>{
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
 
-  const signOutHandler = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  }
+  
 
   console.log(currentUser);
     return (
@@ -27,7 +24,7 @@ const Navigation = () =>{
                     </Link>
                     {
                       currentUser ? (
-                        <span className="nav-link" onClick={signOutHandler}>SIGN OUT</span>
+                        <span className="nav-link" onClick={signOutUser}>SIGN OUT</span>
                       ) : (
                       <Link className='nav-link' to='/authentication'>
                       Sign In
