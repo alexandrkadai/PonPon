@@ -3,6 +3,7 @@ import {Outlet, Link} from 'react-router-dom';
 import { UserContext } from '../../context/user.context';
 import{ signOutUser } from '../../utils/firebase/firebase.utils'
 
+import CartIcon from '../../component/cart-icon/cart-icon.compomemt';
 import './navigation.style.scss';
 import { ReactComponent as LogoC } from '../../assets/Shoe.svg';
 
@@ -31,6 +32,7 @@ const Navigation = () =>{
                       </Link>
                       )
                     }
+                    <CartIcon/>
                   
                 </div>
             </div>
