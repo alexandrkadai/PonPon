@@ -1,10 +1,12 @@
 .cart-icon-container {
+    top: -15px;
     width: 45px;
     height: 45px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    float:right;
     cursor: pointer;
   
     .shopping-icon {
