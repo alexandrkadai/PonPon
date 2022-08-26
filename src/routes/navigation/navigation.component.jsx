@@ -6,14 +6,12 @@ import{ signOutUser } from '../../utils/firebase/firebase.utils'
 import CartDropdown from '../../component/cart-dropdown/cart-dropdown.component';
 import CartIcon from '../../component/cart-icon/cart-icon.compomemt';
 import { ReactComponent as LogoC } from '../../assets/Shoe.svg';
+
 import './navigation.style.scss';
 
 const Navigation = () =>{
   const { currentUser } = useContext(UserContext);
 
-  
-
-  console.log(currentUser);
     return (
       <Fragment>
             <div className='navigation'>
