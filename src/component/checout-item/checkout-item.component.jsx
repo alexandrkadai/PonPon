@@ -17,13 +17,13 @@ const ChecOutItem = ({cartItem}) =>{
         <div className='image-container'>
             <img src={imageUrl} alt={`${name}`}/>
         </div>
-       <span className='name'>{name}</span>
 
-       <span className='quantity'>
-       <div className='arrow' onClick={removeItemFromCartHandler}>&#10094;</div>
+       <span className='name'>{name}</span>
+       <div className='quantity'>
+       <span className='arrow' onClick={removeItemFromCartHandler}>&#10094;</span>
        <span className='value'>{quantity}</span>
-       <div className='arrow' onClick={addItemToCartHandler}>&#10095;</div>
-       </span>
+       <span className='arrow' onClick={addItemToCartHandler}>&#10095;</span>
+       </div>
 
        <span className='price'>{price}$</span>
 

@@ -8,7 +8,7 @@
     align-items: center;
   
     .image-container {
-      width: 23%;
+      width: 20%;
       padding-right: 15px;
   
       img {
@@ -20,13 +20,20 @@
     .quantity,
     .price {
       width: 23%;
+      
+    }
+    .name{
+      font-size: 15px;
+      font-weight: bold;
     }
   
     .quantity {
       display: flex;
   
       .arrow {
+        position: relative;
         cursor: pointer;
+        bottom:2px;
       }
   
       .value {
