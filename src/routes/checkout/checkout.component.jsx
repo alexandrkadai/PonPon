@@ -1,27 +1,44 @@
 import { useContext } from 'react';
 import { CartContext } from '../../context/cart.context';
-import CartItem from '../../component/cart-item/cart-item.component';
+import ChecOutItem from '../../component/checout-item/checkout-item.component';
+ 
 import './checkout.styles.scss';
 
 const CheckOut = () =>{
-    const { cartItems, addItemToCart, removeItemFromCart } = useContext(CartContext);
+    const { cartItems, cartTotal } = useContext(CartContext);
    
     return (
-        <div>
-        <h1>ChecOut Page</h1>
-            {cartItems.map((cartItem) => {
-                const { id, imageUrl, name, quantity} = cartItem;
-                return <div key={id}>
-                <img src={imageUrl} alt={name}/>
-                <h2>{name }</h2>
-                <span>{quantity}</span>
-                <br/>
-                <span onClick={() => removeItemFromCart(cartItem)}>decrement</span>
-                <br/>
-                <span onClick={() => addItemToCart(cartItem)}>increment</span>
+        <div className='checkout-container'>
+        <h1>Check Out</h1>
+            <div className='checkout-header'>
+                <div className='header-block'>
+                <span>Product</span>
                 </div>
-            } 
+                
+                <div className='header-block'>
+                <span>Description</span>
+                </div>
+
+                <div className='header-block'>
+                <span>Quantity</span>
+                </div>
+                
+                <div className='header-block'>
+                <span>Price</span>
+                </div>
+                
+                <div className='header-block'>
+                <span>Remove</span>
+                </div>
+            </div>
+
+            {cartItems.map((cartItem) => (
+                
+                 <ChecOutItem key={cartItem.id} cartItem={cartItem}/>
+            ) 
             )}
+          
+            <span className='total'>Total : {cartTotal}$</span>
         </div>
     )
 }

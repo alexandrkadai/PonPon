@@ -18,11 +18,13 @@ const addCartItem = (cartItems, productToAdd) => {
 
 export const CartContext = createContext({
     isCartOpen: false,
-    setIsCartOpen: () => {},
     cartItems: [],
-    addItemToCart: () => {},
+    cartTotal: 0,
     cartCount: 0, 
-    removeItemFromCart: () =>{}
+    setIsCartOpen: () => {},
+    addItemToCart: () => {},
+    removeItemFromCart: () =>{},
+    clearItemFromCart: () =>{}
 });
 
 const removeCartItem = (cartItems, cartItemToRemove) => {
@@ -41,21 +43,38 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     );
 };
 
+const clearCartItem = ( cartItems, cartItemToClear) => {
+    return  cartItems.filter((cartItem) =>cartItem.id !== cartItemToClear.id);
+};
+
 export const CartProvider = ({children}) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems, setCatItems] = useState([]);
     const [cartCount, setCarCount] = useState(0);
+    const [cartTotal, setCartTotal] = useState(0);
 
     useEffect(() =>{
         const newCartCount = cartItems.reduce((total, cartItem) => total + cartItem.quantity ,0)
         setCarCount(newCartCount);
     }, [cartItems]);
+
+    useEffect(() =>{
+        const newCartTotal = cartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price ,0)
+        setCartTotal(newCartTotal);
+    }, [cartItems]);
+
     const addItemToCart = (productToAdd) => {
         setCatItems(addCartItem(cartItems, productToAdd));
-    } 
+    };
+
     const removeItemFromCart = (cartItemToRemove) => {
         setCatItems(removeCartItem(cartItems, cartItemToRemove));
-    } 
+    };
+
+    const clearItemFromCart = (cartItemToRemove) => {
+        setCatItems(clearCartItem(cartItems, cartItemToRemove));
+    }; 
+
 
     const value = {
         isCartOpen, 
@@ -63,7 +82,10 @@ export const CartProvider = ({children}) => {
         addItemToCart, 
         cartItems, 
         cartCount,
-        removeItemFromCart
+        removeItemFromCart,
+        clearItemFromCart,
+        cartTotal
+        
     };
 
   
