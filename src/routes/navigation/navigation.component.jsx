@@ -1,5 +1,5 @@
 import {Fragment, useContext} from 'react';
-import {Outlet, Link} from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 import{ signOutUser } from '../../utils/firebase/firebase.utils'
 
 import { UserContext } from '../../context/user.context';
