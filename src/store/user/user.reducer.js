@@ -1,9 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { USER_ACTION_TYPES } from './user.types';
 const INITIAL_STATE = {
 =======
 <<<<<<< HEAD
  import {USER_ACTION_TYPES} from './user.types';
+=======
+ import { USER_ACTION_TYPES } from './user.types';
+>>>>>>> 141b9f3 (Done Macos11)
  const INITIAL_STATE = {
 =======
 import { USER_ACTION_TYPES } from './user.types';
