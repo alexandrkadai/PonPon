@@ -1,24 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { USER_ACTION_TYPES } from './user.types';
 const INITIAL_STATE = {
-=======
-<<<<<<< HEAD
- import {USER_ACTION_TYPES} from './user.types';
-=======
- import { USER_ACTION_TYPES } from './user.types';
->>>>>>> 141b9f3 (Done Macos11)
- const INITIAL_STATE = {
-=======
-import { USER_ACTION_TYPES } from './user.types';
-const INITIAL_STATE = {
->>>>>>> a23c13e96c9db8ad638fc9bbcce347be0dea75ee
->>>>>>> 1030209 (Done Macos)
-=======
-import { USER_ACTION_TYPES } from './user.types';
-const INITIAL_STATE = {
->>>>>>> b828def (Done Eberything)
      currentUser: null
  };
 
