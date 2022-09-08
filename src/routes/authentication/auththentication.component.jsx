@@ -1,7 +1,7 @@
 
 import SignUpForm  from '../../component/sign-up/sign-up-form.component';
 import SignInForm from '../../component/sign-in-form/sign-in-form.component';
-import './authentication.styles.scss';
+import {AuthenticationContainerDiv} from './authentication.styles';
 import {
         auth, 
         signInWithGooglePopup, 
@@ -11,10 +11,10 @@ import {
 const Authentication = () => {
 
     return(
-        <div className='authentication-container'>
+        <AuthenticationContainerDiv>
         <SignInForm/>
         <SignUpForm/>
-        </div>
+        </AuthenticationContainerDiv>
 );
 };
 

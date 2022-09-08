@@ -16,5 +16,3 @@ export const userReducer = (state = INITIAL_STATE, action) => {
             return state;
     }
 } ;
-// Some initial comment 
-//New Initial comment
