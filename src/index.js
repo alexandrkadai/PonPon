@@ -11,16 +11,13 @@ import './index.scss';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
-import { CartProvider } from './context/cart.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>   
-            <CartProvider>
               <App />
-            </CartProvider>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

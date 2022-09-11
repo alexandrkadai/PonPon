@@ -24,37 +24,7 @@ export const CartContext = createContext({
     clearItemFromCart: () =>{}
 });
 
-const CART_ACTION_TYPES = {
-    SET_CART_ITEMS: 'SET_CART_ITEMS',
-    SET_IS_CART_OPEN: 'SET_IS_CART_OPEN'
-}
 
-const INITIAL_STATE = {
-    isCartOpen: false,
-    cartItems: [],
-    cartTotal: 0,
-    cartCount: 0, 
-};
-
-const cartReducer = (state, action) =>{
-    const {type, payload} = action;
-
-    switch(type){
-        case CART_ACTION_TYPES.SET_CART_ITEMS :
-            return{ 
-                ...state,  
-                ...payload
-            } 
-            case CART_ACTION_TYPES.SET_IS_CART_OPEN :
-                return{ 
-                    ...state,  
-                    isCartOpen: payload
-                } 
-        default: 
-        throw new Error(`Unhandled type of ${type} in cartReducer`);
-            
-    };
-};
 
 const removeCartItem = (cartItems, cartItemToRemove) => {
     const existingCartItem = cartItems.find(
