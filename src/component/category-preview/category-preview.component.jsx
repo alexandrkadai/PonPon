@@ -9,8 +9,9 @@ const CategoryPreview = ({title, products}) =>{
         <h2>
         <Link className='title' to={title}>{title.toUpperCase()}</Link>
         </h2>
-        <Preview>
+        <Preview> 
         {
+            //preview of 4 first items
             products
             .filter(( _, idx) => idx < 4 )
             .map((product) => (

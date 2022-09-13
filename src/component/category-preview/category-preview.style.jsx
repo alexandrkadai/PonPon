@@ -9,7 +9,14 @@ export const CategoryPreviewContainer = styled.div`
       font-size: 28px;
       margin-bottom: 25px;
       cursor: pointer;
+      text-decoration: none ;
+      color: black;
+  
     }
+    h2{
+      text-align: center ;
+    }
+   
   `;
   //END
 
