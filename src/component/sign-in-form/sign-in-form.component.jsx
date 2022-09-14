@@ -1,57 +1,48 @@
 import { useState} from "react";
-import { signInWithGooglePopup,
-         creatUserDocumentFromAuth,
-         signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
+import { useDispatch } from "react-redux";
 
 import FormInput from "../form-input/form-input.component";
-import Button, {Button_Types_Classes} from "../button/button.component";
+import Button, { Button_Types_Classes } from "../button/button.component";
+import { googleSignInStart, emailSignInStart } from "../../store/user/user.action";
 
-
-import {SignUpContainerDiv, ButtonsContainerDiv} from './sign-in-form.styles';
+import { SignUpContainerDiv, ButtonsContainerDiv } from './sign-in-form.styles';
 
 const defaultFormFields = {
     "email": '', 
     "password": ''
-}
+};
 
-
-const SignInForm = () =>{ 
+const SignInForm = () => { 
     const [formFields, setFormFields] = useState(defaultFormFields);
-
+    const dispatch = useDispatch();
     const { email, password} = formFields;
-
     const resetFormField = () =>{
        setFormFields(defaultFormFields); 
-    }
+};
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        
-        try {
-            const {user} = await signInAuthUserWithEmailAndPassword(email, password);
-           
-            resetFormField();
-        } catch(error){
-            if(error.code === "auth/wrong-password"){
-                alert('Wrong Password for Your Email');
-            }else if(error.code === "auth/user-not-found"){
-                alert('Such User email dont Registered');
-            }
-
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+        dispatch(emailSignInStart(email, password));           
+        resetFormField();
+    } catch(error){
+        if(error.code === "auth/wrong-password"){
+            alert('Wrong Password for Your Email');
+        }else if(error.code === "auth/user-not-found"){
+            alert('Such User email dont Registered');
         }
-    };
+    }
+};
 
-    const handleChange = (event) => {
-        const {name, value} = event.target;
-        setFormFields({...formFields, [name]:value })
-        console.log(value); 
+const handleChange = (event) => {
+    const {name, value} = event.target;
+    setFormFields({...formFields, [name]:value })
+    console.log(value); 
 };
 
 const signInWithGoogle = async () =>{
-     await signInWithGooglePopup();
-
-    
-}
+    dispatch(googleSignInStart);
+};
 
     return (
         <SignUpContainerDiv>
@@ -82,6 +73,6 @@ const signInWithGoogle = async () =>{
         </form>
         </SignUpContainerDiv>
     )
-}
+};
 
 export default SignInForm;
