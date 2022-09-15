@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import FormInput from "../form-input/form-input.component";
@@ -13,9 +13,10 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => { 
-    const [formFields, setFormFields] = useState(defaultFormFields);
     const dispatch = useDispatch();
+    const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password} = formFields;
+    
     const resetFormField = () =>{
        setFormFields(defaultFormFields); 
 };
@@ -41,7 +42,7 @@ const handleChange = (event) => {
 };
 
 const signInWithGoogle = async () =>{
-    dispatch(googleSignInStart);
+    dispatch(googleSignInStart());
 };
 
     return (

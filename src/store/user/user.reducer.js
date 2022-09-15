@@ -14,11 +14,18 @@ export const userReducer = (state = INITIAL_STATE, action) => {
             ...state, 
             currentUser: payload
             };
-            case USER_ACTION_TYPES.SIGN_IN_FAIL:
-                return{
-                    ...state, 
-                    error: payload,
-                };
+        case USER_ACTION_TYPES.SIGN_IN_FAIL:
+            return{
+                ...state, 
+                error: payload,
+            };
+        case USER_ACTION_TYPES.SIGN_UP_FAIL:
+            console.log('Error user-reducer');
+            return{
+                ...state, 
+                error: payload,
+                        
+            };
         default:
             return state;
     }
