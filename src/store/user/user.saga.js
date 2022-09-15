@@ -4,13 +4,16 @@ import { USER_ACTION_TYPES } from './user.types';
 import { signInSuccess,
          signInFail,
          signUpSuccess,
-         signUpFail } from './user.action';
+         signUpFail, 
+         signOutSuccess,
+         signOutFail } from './user.action';
 
 import { getCurrentUser, 
          creatUserDocumentFromAuth, 
          signInWithGooglePopup, 
          signInAuthUserWithEmailAndPassword,
-         createAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
+         createAuthUserWithEmailAndPassword,
+         signOutUser } from '../../utils/firebase/firebase.utils';
 
 //if UserAuth changed (usersigned)
 export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
@@ -70,12 +73,24 @@ export function* signUp ({payload : {email, password, displayName}}){
     }
 };
 
+//Listen Sign out
+export function* signOut() {
+    try{
+        yield call(signOutUser);
+        yield put(signOutSuccess());
+    }
+    catch(error){
+        yield put(signOutFail(error));
+    }
+    
+};
+
 //SIGNUP AFTER SIGN IN
 export function* signInAfterSignUp({payload: {user, additionalDetails}}){
     yield call(getSnapshotFromUserAuth, user, additionalDetails);
 };
 
-//GOOGLE SIGN IN
+//LISTEN GOOGLE SIGN IN
 export function* onGoogleSignInStart() {
     yield takeLatest(USER_ACTION_TYPES.GOOGLE_SIGN_IN_START, signInWithGoogle);
 };
@@ -85,12 +100,12 @@ export function* onCheckUserSession() {
     yield takeLatest(USER_ACTION_TYPES.CHECK_USER_SESSION, isUserAuthenticated );
 };
 
-//EMAIL AND PASSWORD
+//LISTEN EMAIL AND PASSWORD
 export function* onEmailSignInStart() {
     yield takeLatest(USER_ACTION_TYPES.EMAIL_SIGN_IN_START, signInWithEmail );
 };
 
-//SIGN UP 
+//LISTEN SIGN UP 
 export function* onSignUpStart() {
     yield takeLatest(USER_ACTION_TYPES.SIGN_UP_START, signUp);
 };
@@ -99,12 +114,17 @@ export function* onSignUpSuccess() {
     yield takeLatest(USER_ACTION_TYPES.SIGN_UP_SUCCESS, signInAfterSignUp);
 };
 
+export function* onSignOutStart() {
+    yield takeLatest(USER_ACTION_TYPES.SIGN_OUT_START, signOut);
+};
+
 //LSITENING to out actions
 export  function* userSagas() {
     yield all([ call(onCheckUserSession),
                 call(onGoogleSignInStart), 
                 call(onEmailSignInStart),
                 call(onSignUpStart),
-                call(onSignUpSuccess)
+                call(onSignUpSuccess),
+                call(onSignOutStart),
             ]);
 };

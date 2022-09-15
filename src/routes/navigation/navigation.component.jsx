@@ -1,10 +1,10 @@
 import {Fragment} from 'react';
 import {Outlet} from 'react-router-dom';
-import {signOutUser} from '../../utils/firebase/firebase.utils';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {selectIsCartOpen} from '../../store/cart/cart.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
+import { signOutStart } from '../../store/user/user.action';
 
 import CartDropdown from '../../component/cart-dropdown/cart-dropdown.component';
 import CartIcon from '../../component/cart-icon/cart-icon.compomemt';
@@ -16,6 +16,10 @@ import {NavigationContainer, NavLinks, NavLink, LogoContainer} from './navigatio
 const Navigation = () =>{
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
+  const dispatch = useDispatch();
+  const signOutUser = () =>{
+    dispatch(signOutStart());
+  } ;
     return (
       <Fragment>
             <NavigationContainer className='navigation'>
