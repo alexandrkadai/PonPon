@@ -8,7 +8,6 @@ import {
         creatUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 
 const Authentication = () => {
-
     return(
         <AuthenticationContainerDiv>
         <SignInForm/>

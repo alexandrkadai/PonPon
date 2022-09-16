@@ -9,7 +9,7 @@ import './shop.styles.scss';
 
 const Shop = () => {
     const dispatch = useDispatch();
-    useEffect(() =>{
+    useEffect(() => {
         dispatch(fetchCategoriesStart());
     }, []);
     return (

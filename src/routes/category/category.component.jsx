@@ -28,7 +28,6 @@ const Category = () =>{
             }
             </div>
         }
-      
     </Fragment>
     )
 };
