@@ -4,7 +4,7 @@ export const Button_Types_Classes = {
     base: 'base',
     google: 'google-sign-in',
     inverted: 'inverted',
-}
+};
 
 //Types of buttons
 const getButton = (buttonType = Button_Types_Classes.base) => (
