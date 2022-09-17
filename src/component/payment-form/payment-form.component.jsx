@@ -7,7 +7,10 @@ const PaymentForm = () => {
     const elements = useElements();
     const paymentHandler = async (e) =>{
         e.preventDefault();
-
+        if(!stripe || !elements){
+            return;
+        }
+        
     };
 
     return(
