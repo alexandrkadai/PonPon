@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const SignUpContainerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 380px;
 
-    display:flex;
-    flex-direction: column;
-    width:380px;
-
-    h2 {
-        margin-top: 10px 0;
-    }
+  h2 {
+    margin-top: 10px 0;
+  }
 `;
 //END

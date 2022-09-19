@@ -23,33 +23,29 @@ export const BaseButton = styled.button`
     color: black;
     border: 1px solid black;
   }
-
 `;
 //END
 
 export const GoogleSignInButton = styled(BaseButton)`
-     background-color: #4285f4;
-      color: white;
-  
-      &:hover {
-        background-color: #357ae8;
-        border: none;
-      }
-    
+  background-color: #4285f4;
+  color: white;
+
+  &:hover {
+    background-color: #357ae8;
+    border: none;
+  }
 `;
 //END
 
 export const InvertedButton = styled(BaseButton)`
- background-color: white;
-      color: black;
-      border: 1px solid black;
-  
-      &:hover {
-        background-color: black;
-        color: white;
-        border: none;
-      }
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 
+  &:hover {
+    background-color: black;
+    color: white;
+    border: none;
+  }
 `;
 //END
-      
