@@ -39,13 +39,13 @@ export const BackgroundImage = styled.div`
 export const DirectoryItemContainer = styled.div`
   display: flex;
   flex: 1 1 auto;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   min-width: 30%;
   height: 240px;
   margin: 15px 15px;
   border: 1px solid black;
-  background-position: center;
+  background-position: top;
   background-size: cover;
   overflow: hidden;
 

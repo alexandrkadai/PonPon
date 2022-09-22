@@ -5,28 +5,28 @@ const Home = () => {
     {
       id: 1,
       title: 'hats',
-      url: 'https://media.istockphoto.com/id/1041773030/es/vector/conjunto-de-vector-plano-de-sombreros-de-hombre-y-mujer-elegantes-sombreros-masculinos-y.webp?s=2048x2048&w=is&k=20&c=EAKiLZ5RbdcbJmSWBYq73irB1kV9ryUeKvd9tUYdFgo=',
+      url: 'https://images.unsplash.com/photo-1463701700197-69d4180d3ce6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1687&q=80',
       route: 'shop/hats',
     },
     {
       id: 2,
       title: 'jackets',
-      url: 'https://media.istockphoto.com/id/889023692/es/vector/caliente-ropa-casual-para-hombres-vector-iconos.webp?s=612x612&w=is&k=20&c=x6cbMQrXpWJfdWzWNCHfxJWqK8u7EZLrtOf-WqEUqU4=',
+      url: 'https://images.unsplash.com/photo-1616633471671-7c540aa09536?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
     },
     {
       id: 3,
       title: 'sneakers',
-      url: 'https://media.istockphoto.com/id/974771930/es/vector/vector-set-de-calzado-zapatos-con-estilo-para-hombre-y-mujer-sandalias-diferentes-%C3%A9pocas-del.webp?s=612x612&w=is&k=20&c=OStf4XnsGGMN1QzJMB414Ru0a5yqmw5rT9VmkbC1oow=',
+      url: 'https://images.unsplash.com/photo-1660866838287-d2239bb99976?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     },
     {
       id: 4,
       title: 'womens',
-      url: 'https://media.istockphoto.com/id/1296144988/es/vector/cinco-mujeres-de-diferentes-etnias-y-culturas-est%C3%A1n-juntas-una-al-lado-de-la-otra-las-chicas.webp?s=612x612&w=is&k=20&c=X5ko4gReeWrq5Hgo0iL1opfr9azRMbpXvrLLnf5Z_8A=',
+      url: 'https://images.unsplash.com/photo-1610503959407-2022cc1bf74c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     },
     {
       id: 5,
       title: 'mens',
-      url: 'https://media.istockphoto.com/id/492529287/es/foto/retrato-de-feliz-sonriente-hombre.webp?s=612x612&w=is&k=20&c=1Re5YIZQqy800E9H6jVue0qv3TEvJXLYzmv-QncUbBo=',
+      url: 'https://images.unsplash.com/photo-1626847152272-c64724db41c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     },
   ];
   return <Directory categories={categories} />;
