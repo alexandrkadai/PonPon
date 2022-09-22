@@ -32,4 +32,6 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   color: black;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
 `;

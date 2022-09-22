@@ -16,7 +16,7 @@ const ProductCart = ({ product }) => {
       <img src={imageUrl} alt={`${name}`} />
       <FooterDiv>
         <NameSpn>{name}</NameSpn>
-        <PriceSpn>{price}</PriceSpn>
+        <PriceSpn>{price}$</PriceSpn>
       </FooterDiv>
       <Button buttonType={Button_Types_Classes.inverted} onClick={addProductToCart}>
         Add to Cart

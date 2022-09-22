@@ -7,6 +7,8 @@ export const ProductCartContainerDiv = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+  border: 1px solid black;
+  padding-bottom: 20px;
 
   img {
     width: 100%;
@@ -53,5 +55,6 @@ export const NameSpn = styled.span`
 
 export const PriceSpn = styled.span`
   width: 10%;
+  margin-right: 20px;
 `;
 //END
