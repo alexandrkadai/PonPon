@@ -15,8 +15,11 @@ export const Group = styled.div`
   margin: 45px 0;
 `;
 //END
+type FormInputProps = {
+  shrink?: boolean;
+};
 
-export const FormInputLabel = styled.label`
+export const FormInputLabel = styled.label<FormInputProps>`
   color: ${subColor};
   font-size: 16px;
   font-weight: normal;

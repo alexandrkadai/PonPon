@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent, HtmlHTMLAttributes } from 'react';
 import { useDispatch } from 'react-redux';
-
+import { AuthError, AuthErrorCodes } from 'firebase/auth';
 import FormInput from '../form-input/form-input.component';
 import Button, { Button_Types_Classes } from '../button/button.component';
 import { googleSignInStart, emailSignInStart } from '../../store/user/user.action';
@@ -21,21 +21,21 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       dispatch(emailSignInStart(email, password));
       resetFormField();
     } catch (error) {
-      if (error.code === 'auth/wrong-password') {
+      if ((error as AuthError).code === AuthErrorCodes.INVALID_PASSWORD) {
         alert('Wrong Password for Your Email');
-      } else if (error.code === 'auth/user-not-found') {
+      } else if ((error as AuthError).code === AuthErrorCodes.NULL_USER) {
         alert('Such User email dont Registered');
       }
     }
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
     console.log(value);
