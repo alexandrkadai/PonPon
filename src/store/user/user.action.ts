@@ -9,6 +9,7 @@ import {
 
 import { UserData, AdditionalInformation } from '../../utils/firebase/firebase.utils';
 
+//User action types
 export type CheckUserSession = Action<USER_ACTION_TYPES.CHECK_USER_SESSION>;
 export type SetCurrentUser = ActionWithPayload<USER_ACTION_TYPES.SET_CURRENT_USER, UserData>;
 export type GoogleSignInStart = Action<USER_ACTION_TYPES.GOOGLE_SIGN_IN_START>;
