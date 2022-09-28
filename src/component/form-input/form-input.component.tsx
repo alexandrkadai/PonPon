@@ -1,4 +1,4 @@
-import { FC, HtmlHTMLAttributes, InputHTMLAttributes } from 'react';
+import { FC, InputHTMLAttributes } from 'react';
 import { FormInputLabel, Input, Group } from './form-input.styles';
 
 type FormInputProps = { label: string } & InputHTMLAttributes<HTMLInputElement>;

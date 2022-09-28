@@ -1,7 +1,12 @@
+import { FC } from 'react';
 import { CartItemContainer, ItemDetails, Name } from './cart-item.styles';
+import { CartItem } from '../../store/cart/cart.types';
 
-const CartItem = ({ cartItem }) => {
-  //Getting params
+type CartItemProps = {
+  cartItem: CartItem;
+};
+
+const CartItemComp: FC<CartItemProps> = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
   const sum = quantity * price;
   return (
@@ -17,4 +22,4 @@ const CartItem = ({ cartItem }) => {
   );
 };
 
-export default CartItem;
+export default CartItemComp;

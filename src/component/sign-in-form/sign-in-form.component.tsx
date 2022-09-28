@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent, HtmlHTMLAttributes } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { AuthError, AuthErrorCodes } from 'firebase/auth';
 import FormInput from '../form-input/form-input.component';
