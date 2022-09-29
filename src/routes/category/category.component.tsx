@@ -2,11 +2,11 @@ import { useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import Spinner from '../../component/spinner/spinner.component';
 import {
   selectCategoriesMap,
   selectCategoriesIsLoading,
 } from '../../store/categories/category.selector';
+import Spinner from '../../component/spinner/spinner.component';
 import ProductCart from '../../component/product-cart/product-cart.component';
 import { CategoryContainer, CategoryTitle } from './category.styles';
 
