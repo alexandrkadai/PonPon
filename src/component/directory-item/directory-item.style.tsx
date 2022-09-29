@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type BackgtoundImageProps = {
+  url: string;
+};
+
 export const Body = styled.div`
   height: 90px;
   display: flex;
@@ -27,7 +31,7 @@ export const Body = styled.div`
 `;
 //END
 
-export const BackgroundImage = styled.div`
+export const BackgroundImage = styled.div<BackgtoundImageProps>`
   width: 100%;
   height: 100%;
   background-size: cover;
