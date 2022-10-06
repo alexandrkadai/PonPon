@@ -13,7 +13,6 @@ const Navigation = lazy(() => import('./routes/navigation/navigation.component')
 
 const App = () => {
   const dispatch = useDispatch();
-  //Component mount and send user session to dipatch
   useEffect(() => {
     dispatch(checkUserSession());
   }, []);
