@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart, removeItemFromCart, clearItemFromCart } from '../../store/cart/cart.action';
 import { selectCartItems } from '../../store/cart/cart.selector';
@@ -18,7 +18,7 @@ type ChecOutItemProps = {
   cartItem: CartItem;
 };
 
-const ChecOutItem: FC<ChecOutItemProps> = ({ cartItem }) => {
+const ChecOutItem: FC<ChecOutItemProps> = memo(({ cartItem }) => {
   const { name, imageUrl, quantity, price } = cartItem;
   const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
@@ -33,9 +33,9 @@ const ChecOutItem: FC<ChecOutItemProps> = ({ cartItem }) => {
 
       <Name>{name}</Name>
       <Quantity>
-        <Arrow onClick={removeItemFromCartHandler}>&#10094;</Arrow>
+        <Arrow onClick={removeItemFromCartHandler}>-</Arrow>
         <Value>{quantity}</Value>
-        <Arrow onClick={addItemToCartHandler}>&#10095;</Arrow>
+        <Arrow onClick={addItemToCartHandler}>+</Arrow>
       </Quantity>
 
       <Price>{price}$</Price>
@@ -43,6 +43,6 @@ const ChecOutItem: FC<ChecOutItemProps> = ({ cartItem }) => {
       <RemoveButton onClick={ClearItemHandler}>&#10005;</RemoveButton>
     </CheckoutItemContainer>
   );
-};
+});
 
 export default ChecOutItem;
