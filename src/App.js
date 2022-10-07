@@ -11,6 +11,8 @@ const CheckOut = lazy(() => import('./routes/checkout/checkout.component'));
 const Shop = lazy(() => import('./routes/shop/shop.component'));
 const Navigation = lazy(() => import('./routes/navigation/navigation.component'));
 
+import { GlobalStyle } from './global.styles';
+
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -18,16 +20,18 @@ const App = () => {
   }, []);
 
   return (
-    <Suspense fallback={<Spinner />}>
-      <Routes>
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route path="shop/*" element={<Shop />} />
-          <Route path="authentication" element={<Authentication />} />
-          <Route path="checkout" element={<CheckOut />} />
-        </Route>
-      </Routes>
-    </Suspense>
+    <GlobalStyle>
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<Navigation />}>
+            <Route index element={<Home />} />
+            <Route path="shop/*" element={<Shop />} />
+            <Route path="authentication" element={<Authentication />} />
+            <Route path="checkout" element={<CheckOut />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </GlobalStyle>
   );
 };
 
