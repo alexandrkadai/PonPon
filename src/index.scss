@@ -11,3 +11,9 @@ body {
 code {
   font-family: Roboto Condenced, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 0;
+  }
+}

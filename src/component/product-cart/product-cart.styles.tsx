@@ -2,13 +2,17 @@ import styled from 'styled-components';
 
 export const ProductCartContainerDiv = styled.div`
   width: 100%;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  height: 350px;
   align-items: center;
   position: relative;
   border: 1px solid black;
   padding-bottom: 20px;
+
+  @media screen and(max-width:800px) {
+    padding-bottom: 30px;
+  }
 
   img {
     width: 100%;

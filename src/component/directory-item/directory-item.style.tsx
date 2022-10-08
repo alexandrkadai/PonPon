@@ -4,7 +4,7 @@ type BackgtoundImageProps = {
   url: string;
 };
 
-export const Body = styled.div`
+export const BodyButton = styled.div`
   height: 90px;
   display: flex;
   flex-direction: column;
@@ -24,9 +24,24 @@ export const Body = styled.div`
   }
 
   p {
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-weight: lighter;
     font-size: 16px;
+    text-align: center;
+  }
+  @media screen and (max-width: 800px) {
+    height: 70px;
+    width: 50px;
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 0px;
+      width: 100px;
+    }
+    p {
+      font-size: 13px;
+      width: 100px;
+    }
   }
 `;
 //END
@@ -62,7 +77,7 @@ export const DirectoryItemContainer = styled.div`
       transform: scale(1.2);
       transition: 2s ease;
     }
-    & ${Body} {
+    & ${BodyButton} {
       opacity: 0.9;
     }
   }
