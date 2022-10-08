@@ -8,6 +8,9 @@ export const SignUpContainerDiv = styled.div`
   h2 {
     margin-top: 10px 0;
   }
+  @media screen and (max-width: 800px) {
+    padding: 5px;
+  }
 `;
 //END
 export const ButtonsContainerDiv = styled.div`
