@@ -15,8 +15,6 @@ export const CategoryPreviewContainer = styled.div`
   h2 {
     text-align: center;
   }
-  @media screen and (max-width: 800px) {
-  }
 `;
 //END
 

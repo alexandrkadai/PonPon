@@ -10,8 +10,8 @@ export const ProductCartContainerDiv = styled.div`
   border: 1px solid black;
   padding-bottom: 20px;
 
-  @media screen and(max-width:800px) {
-    padding-bottom: 30px;
+  @media screen and (max-width: 800px) {
+    padding-bottom: 25px;
   }
 
   img {
@@ -54,11 +54,17 @@ export const FooterDiv = styled.div`
 export const NameSpn = styled.span`
   width: 90%;
   margin-bottom: 15px;
+  @media screen and (max-width: 800px) {
+    width: 80%;
+  }
 `;
 //END
 
 export const PriceSpn = styled.span`
-  width: 10%;
-  margin-right: 20px;
+  margin-right: 10px;
+  float: right;
+  @media screen and (max-width: 800px) {
+    margin-right: 5px;
+  }
 `;
 //END
